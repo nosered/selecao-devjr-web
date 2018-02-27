@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+      <h3 class="text-center">Listagem de Pessoas</h3>
+      <br/>
+      <div class="container">
+        <form [formGroup]="pesquisaForm" (ngSubmit)="pesquisar()">
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="nome"><strong>Nome</strong></label>
+              <input formControlName="nome" id="nome" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="cpf"><strong>CPF</strong></label>
+              <input formControlName="cpf" id="cpf" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <button type="submit" role="button" class="btn btn-default btn-outline-primary" style="margin-top: 32px; margin-right: 20px"> <i class="fa fa-search"></i> Pesquisar </button>
+              <button [routerLink]="['/pessoas','cadastro']" type="button" role="button" class="btn btn-default btn-outline-success" style="margin-top: 32px"> <i class="fa fa-user-plus"></i> Cadastrar </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div class="col-md-12" style="margin-top: 25px">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-default">
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>CPF</th>
+            <th>Idade</th>
+            <th>Quantidade de Telefones</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pessoa of pessoas">
+            <td>{{ pessoa?.id }}</td>
+            <td>{{ pessoa?.nome }}</td>
+            <td>{{ pessoa?.email }}</td>
+            <td>{{ pessoa?.cpf }}</td>
+            <td>{{ pessoa?.dataNascimento | idade }}</td>
+            <td>{{ pessoa?.telefones.length }}</td>
+            <td>
+              <button [routerLink]="['/pessoas',pessoa.id,'atualiza']" type="button" role="button" class="btn btn-default btn-outline-success" placement="top" ngbTooltip="Editar"> <i class="fa fa-edit"></i> </button>
+              <button (click)="remover(pessoa)" type="button" role="button" class="btn btn-default btn-outline-danger" placement="top" ngbTooltip="Deletar"> <i class="fa fa-trash-alt"></i> </button>
+            </td>
+          </tr>
+          <!--tr>
+            <td>1</td>
+            <td>Arnaldo</td>
+            <td>arnaldo@mail.com</td>
+            <td>900.317.888-23</td>
+            <td>20 anos</td>
+            <td>1</td>
+            <td>
+              <button [routerLink]="['/pessoas',1,'atualiza']" type="button" class="btn btn-default btn-outline-success" placement="top" ngbTooltip="Editar"> <i class="fa fa-edit"></i> </button>
+              <button type="button" class="btn btn-default btn-outline-danger" placement="top" ngbTooltip="Deletar"> <i class="fa fa-trash-alt"></i> </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Luiza</td>
+            <td>luiza@mail.com</td>
+            <td>800.355.906-07</td>
+            <td>15 anos</td>
+            <td>3</td>
+            <td>
+              <button [routerLink]="['/pessoas',1,'atualiza']" type="button" class="btn btn-default btn-outline-success" placement="top" ngbTooltip="Editar"> <i class="fa fa-edit"></i> </button>
+              <button type="button" class="btn btn-default btn-outline-danger" placement="top" ngbTooltip="Deletar"> <i class="fa fa-trash-alt"></i> </button>
+            </td>
+          </tr-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

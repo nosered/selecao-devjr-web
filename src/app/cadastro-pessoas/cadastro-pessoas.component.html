@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br/>
+      <h3 class="text-center">Cadastro de Pessoas</h3>
+      <br/>
+      <div class="container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="nome"><strong>Nome</strong></label>
+              <input formControlName="nome" id="nome" type="text" class="form-control">
+            </div>
+            <div class="form-group col-6">
+              <label for="cpf"><strong>CPF</strong></label>
+              <input formControlName="cpf" id="cpf" type="text" class="form-control">
+            </div>
+            <div class="form-group col-6">
+              <label for="email"><strong>E-mail</strong></label>
+              <input formControlName="email" id="email" type="email" class="form-control">
+            </div>
+            <div class="form-group col-6">
+              <label for="dataNascimento"><strong>Data de Nascimento</strong></label>
+              <input formControlName="dataNascimento" id="dataNascimento" type="text" class="form-control">
+            </div>
+            <div class="col-2">
+              <br>
+              <button type="submit" role="button" class="btn btn-default btn-block btn-outline-success"> <i class="fa fa-user-plus"></i> Cadastrar </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!--div class="col-md-12" >
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>CPF</th>
+            <th>Idade</th>
+            <th>Quantidade de Telefones</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Arnaldo</td>
+            <td>arnaldo@mail.com</td>
+            <td>900.317.888-23</td>
+            <td>20 anos</td>
+            <td>1</td>
+            <td>
+              <button type="button" class="btn btn-default text-success" placement="left" ngbTooltip="Editar"> <i class="fa fa-edit"></i> </button>
+              <button type="button" class="btn btn-default text-danger" placement="right" ngbTooltip="Deletar"> <i class="fa fa-trash-alt"></i> </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Luiza</td>
+            <td>luiza@mail.com</td>
+            <td>800.355.906-07</td>
+            <td>15 anos</td>
+            <td>3</td>
+            <td>
+              <button type="button" class="btn btn-default text-success" placement="left" ngbTooltip="Editar"> <i class="fa fa-edit"></i> </button>
+              <button type="button" class="btn btn-default text-danger" placement="right" ngbTooltip="Deletar"> <i class="fa fa-trash-alt"></i> </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div-->
+  </div>
+</div>
